@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Glimmr GPU API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://ryanbyrdgit-glimmr.vercel.app"
+    }
+  ],
+  "paths": {
+    "/api/gpus": {
+      "get": {
+        "summary": "Fetch GPU listings",
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "max_price",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "gpu_model",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of matching GPU listings"
+          }
+        }
+      }
+    }
+  }
+}
